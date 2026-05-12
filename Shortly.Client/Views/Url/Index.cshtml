@@ -1,13 +1,9 @@
 ﻿
 @{
     var currentDateTime = DateTime.UtcNow;
-
-    var allUrls = ViewData["AllUrls"] as List<string>;
 }
 
-<h4>@ViewData["ShortenedUrl"]</h4>
-
-@foreach(var url in allUrls)
+@if (TempData["SuccessMessage"] != null)
 {
-    <h3>@url</h3>
+    <h3>Success @TempData["SuccessMessage"].ToString()</h3>
 }
